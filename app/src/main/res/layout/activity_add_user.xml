@@ -20,7 +20,27 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etUserName"
             android:hint="Enter User Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="User Id"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etUserId"
+            android:hint="Enter User Id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -38,6 +58,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etEmail"
             android:hint="Enter Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -56,6 +77,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etPassword"
             android:hint="Enter Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -74,6 +96,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etAddressId"
             android:hint="Enter Address ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -92,6 +115,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etGeoId"
             android:hint="Enter Geo ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -110,6 +134,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etPhone"
             android:hint="Enter Phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -128,6 +153,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etWebsite"
             android:hint="Enter Website"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -147,10 +173,19 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:id="@+id/etCompanyId"
             android:hint="Enter Company ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddUser"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Add User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -5,9 +5,12 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity(tableName = "tblUsers")
-public class UserModel {
+public class UserEntity {
 
     @PrimaryKey(autoGenerate = true)
+    @NonNull
+    private int id;
+
     @NonNull
     private String userId;
 
@@ -32,11 +35,11 @@ public class UserModel {
 
     private String companyId;
 
-    public UserModel() {
+    public UserEntity() {
     }
 
-    public UserModel(@NonNull String userId, @NonNull String userName, @NonNull String email,
-                     @NonNull String password, @NonNull String addressId, @NonNull String phone) {
+    public UserEntity(@NonNull String userId, @NonNull String userName, @NonNull String email,
+                      @NonNull String password, @NonNull String addressId, @NonNull String phone) {
         this.userId = userId;
         this.userName = userName;
         this.email = email;
@@ -45,8 +48,8 @@ public class UserModel {
         this.phone = phone;
     }
 
-    public UserModel(@NonNull String userId, @NonNull String userName, @NonNull String email, @NonNull String password,
-                     @NonNull String addressId, String geoId, @NonNull String phone, String website, String companyId) {
+    public UserEntity(@NonNull String userId, @NonNull String userName, @NonNull String email, @NonNull String password,
+                      @NonNull String addressId, String geoId, @NonNull String phone, String website, String companyId) {
         this.userId = userId;
         this.userName = userName;
         this.email = email;
@@ -56,6 +59,14 @@ public class UserModel {
         this.phone = phone;
         this.website = website;
         this.companyId = companyId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @NonNull
@@ -138,7 +149,7 @@ public class UserModel {
 
     @Override
     public String toString() {
-        return "UserModel{" +
+        return "UserEntity{" +
                 "userId='" + userId + '\'' +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +

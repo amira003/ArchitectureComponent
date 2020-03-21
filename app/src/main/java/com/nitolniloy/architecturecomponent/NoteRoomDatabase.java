@@ -5,9 +5,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import java.lang.reflect.Array;
-
-@Database(entities = NoteDao.class, version = 2)
+@Database(entities = {Note.class, UserEntity.class}, version = 2)
 public abstract class NoteRoomDatabase extends RoomDatabase {
 
     public abstract NoteDao noteDao();

@@ -7,6 +7,6 @@ import android.arch.persistence.room.Insert;
 public interface UserDao {
 
     @Insert
-    void insertUser(UserModel userModel);
+    void insertUser(UserEntity userModel);
 
 }

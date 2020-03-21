@@ -17,19 +17,19 @@ public class UserViewModel extends AndroidViewModel {
         userDao = noteDB.userDao();
     }
 
-    public void insertUser(UserModel userModel) {
-      //  new InsertAsyncTask(userDao).execute(userModel);
+    public void insertUser(UserEntity userModel) {
+        new InsertAsyncTask(userDao).execute(userModel);
     }
 
-    private class InsertAsyncTask extends AsyncTask<UserModel, Void, Void> {
+    private class InsertAsyncTask extends AsyncTask<UserEntity, Void, Void> {
 
         UserDao mUserDao;
-        InsertAsyncTask(NoteDao mNoteDao) {
+        InsertAsyncTask(UserDao mUserDao) {
             this.mUserDao = mUserDao;
         }
 
         @Override
-        protected Void doInBackground(UserModel... userModels) {
+        protected Void doInBackground(UserEntity... userModels) {
             mUserDao.insertUser(userModels[0]);
             return null;
         }
