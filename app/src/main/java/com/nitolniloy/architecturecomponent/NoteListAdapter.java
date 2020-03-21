@@ -44,7 +44,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
 
         if (mNotes != null) {
             Note note = mNotes.get(position);
-            holder.setData(note.getNote(), position);
+            holder.setData(note.getNoteTitle(), position);
             holder.setListeners();
         } else {
             // Covers the case of data not being ready yet.
@@ -87,7 +87,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, EditNoteActivity.class);
-                    intent.putExtra("note_id", mNotes.get(mPosition).getId());
+                    intent.putExtra("note_id", mNotes.get(mPosition).getNoteId());
                     ((Activity)mContext).startActivityForResult(intent, MainActivity.UPDATE_NOTE_ACTIVITY_REQUEST_CODE);
                 }
             });

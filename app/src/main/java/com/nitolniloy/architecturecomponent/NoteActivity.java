@@ -59,7 +59,7 @@ public class NoteActivity extends AppCompatActivity implements NoteListAdapter.O
 
             // Code to insert note
             final String note_id = UUID.randomUUID().toString();
-            Note note = new Note(note_id, data.getStringExtra(AddNoteActivity.NOTE_ADDED));
+            Note note = new Note(note_id, data.getStringExtra(AddNoteActivity.NOTE_ADDED), data.getStringExtra(AddNoteActivity.NOTE_DESC));
             noteViewModel.insert(note);
 
             Toast.makeText(
@@ -71,7 +71,8 @@ public class NoteActivity extends AppCompatActivity implements NoteListAdapter.O
             // Code to update the note
             Note note = new Note(
                     data.getStringExtra(EditNoteActivity.NOTE_ID),
-                    data.getStringExtra(EditNoteActivity.UPDATED_NOTE));
+                    data.getStringExtra(EditNoteActivity.UPDATED_NOTE),
+                    data.getStringExtra(EditNoteActivity.UPDATED_DESC));
             noteViewModel.updateNote(note);
 
             Toast.makeText(

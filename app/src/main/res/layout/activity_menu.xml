@@ -11,13 +11,25 @@
 
     <Button
         android:id="@+id/btnRandonNumberPractise"
+        android:textAllCaps="false"
         android:text="RandonNumberPractise"
+        android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnNoteModule"
+        android:textAllCaps="false"
         android:text="NoteModule"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnAddUser"
+        android:text="Add User"
+        android:textAllCaps="false"
+        android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

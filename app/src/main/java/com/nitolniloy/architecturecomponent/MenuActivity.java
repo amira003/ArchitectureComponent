@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button btnRandonNumberPractise, btnNoteModule;
+    private Button btnRandonNumberPractise, btnNoteModule, btnAddUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,15 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, NoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAddUser = findViewById(R.id.btnAddUser);
+        btnAddUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, AddUserActivity.class);
                 startActivity(intent);
             }
         });

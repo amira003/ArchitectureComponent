@@ -11,7 +11,8 @@ import android.widget.EditText;
 public class AddNoteActivity extends AppCompatActivity {
 
     public static final String NOTE_ADDED = "new_note";
-    private EditText etNewNote;
+    public static final String NOTE_DESC = "new_desc";
+    private EditText etNewNote, etNewDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class AddNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         etNewNote = findViewById(R.id.etNewNote);
+        etNewDescription = findViewById(R.id.etNewDescription);
         Button button = findViewById(R.id.bAdd);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -30,7 +32,9 @@ public class AddNoteActivity extends AppCompatActivity {
                     setResult(RESULT_CANCELED, resultIntent);
                 } else {
                     String note = etNewNote.getText().toString();
+                    String desc = etNewDescription.getText().toString();
                     resultIntent.putExtra(NOTE_ADDED, note);
+                    resultIntent.putExtra(NOTE_DESC, desc);
                     setResult(RESULT_OK, resultIntent);
                 }
 

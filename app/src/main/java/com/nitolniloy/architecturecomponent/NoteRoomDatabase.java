@@ -5,10 +5,13 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(entities = Note.class, version = 1)
+import java.lang.reflect.Array;
+
+@Database(entities = NoteDao.class, version = 2)
 public abstract class NoteRoomDatabase extends RoomDatabase {
 
     public abstract NoteDao noteDao();
+    public abstract UserDao userDao();
 
     private static volatile NoteRoomDatabase noteRoomInstance;
 

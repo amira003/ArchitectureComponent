@@ -9,29 +9,34 @@ import android.support.annotation.NonNull;
 @Entity(tableName = "notes")
 public class Note {
 
-    @NonNull
-    public String getId() {
-        return id;
-    }
-
-    @NonNull
-    public String getNote() {
-        return this.mNote;
-    }
-
     @PrimaryKey
     @NonNull
-    private String id;
+    private String noteId;
 
     @NonNull
-    @ColumnInfo(name = "note")
-    private String mNote;
+    private String noteTitle;
 
-    public Note(String id, String note) {
-        this.id = id;
-        this.mNote = note;
+    @NonNull
+    private String noteDesc;
+
+    public Note(@NonNull String noteId, @NonNull String noteTitle, @NonNull String noteDesc) {
+        this.noteId = noteId;
+        this.noteTitle = noteTitle;
+        this.noteDesc = noteDesc;
     }
 
+    @NonNull
+    public String getNoteId() {
+        return noteId;
+    }
 
+    @NonNull
+    public String getNoteTitle() {
+        return noteTitle;
+    }
 
+    @NonNull
+    public String getNoteDesc() {
+        return noteDesc;
+    }
 }

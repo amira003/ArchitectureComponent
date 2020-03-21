@@ -16,7 +16,9 @@ public class EditNoteActivity extends AppCompatActivity {
 
     public static final String NOTE_ID = "note_id";
     static final String UPDATED_NOTE = "note_text";
-    private EditText etNote;
+    static final String UPDATED_DESC = "note_desc";
+
+    private EditText etNote, etUpdateDesc;
     private Bundle bundle;
     private String noteId;
     private LiveData<Note> note;
@@ -29,15 +31,18 @@ public class EditNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_note);
 
         etNote = findViewById(R.id.updateNote);
+        etUpdateDesc = findViewById(R.id.etUpdateDesc);
 
         Button btnUpdate = findViewById(R.id.btnUpdate);
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String updatedNote = etNote.getText().toString();
+                String updateDesc = etUpdateDesc.getText().toString();
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra(NOTE_ID, noteId);
                 resultIntent.putExtra(UPDATED_NOTE, updatedNote);
+                resultIntent.putExtra(UPDATED_DESC, updateDesc);
                 setResult(RESULT_OK, resultIntent); // this will call note activity. and hit onActionResult
                 finish();
             }
@@ -62,7 +67,8 @@ public class EditNoteActivity extends AppCompatActivity {
         note.observe(this, new Observer<Note>() {
             @Override
             public void onChanged(@Nullable Note note) {
-                etNote.setText(note.getNote());
+                etUpdateDesc.setText(note.getNoteDesc());
+                etNote.setText(note.getNoteTitle());
             }
         });
 

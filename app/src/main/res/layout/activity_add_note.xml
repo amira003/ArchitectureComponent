@@ -12,9 +12,16 @@
 
     <EditText
         android:id="@+id/etNewNote"
-        android:hint="ENter note"
+        android:hint="Enter note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etNewDescription"
+        android:lines="3"
+        android:hint="Enter Description"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
 
     <Button
         android:id="@+id/bAdd"
